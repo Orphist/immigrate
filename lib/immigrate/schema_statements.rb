@@ -1,7 +1,9 @@
 module Immigrate
   module SchemaStatements
+    # ToDo: superuser permissions required, so skip it in migration
+    # ToDo: add check if exists
     def create_foreign_connection foreign_server
-      # database.create_fdw_extension #check if exists, also superuser permissions required
+      database.create_fdw_extension
       database.create_server_connection foreign_server
       database.create_user_mapping foreign_server
     end

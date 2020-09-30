@@ -1,7 +1,8 @@
 module Immigrate
   class ForeignTableDefinition
     NATIVE_DATABASE_TYPES = {
-      bigint:     'bigserial',
+      bigserial:   'bigint',
+      serial:      'integer',
       string:      'character varying',
       binary:      'bytea',
       datetime:    'timestamp',
